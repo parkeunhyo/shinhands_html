@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: blue;
+        }
+        h1{
+            color:red;
+        }
+        #name{
+            color: green;
+        }
+        .name{
+            color:brown
+        }
+        input[type='text']{
+            background-color: gray;
+        }
+        /*자식*/
+        #parent > div{
+            color: red;
+        }
+        /*자손*/
+        #parent div{
+            color: blue;
+        }
+
+        #parent, #greet, #name{
+            background-color: yellow;
+        }
+        /*div면서 class가 name인 경우(공백x)*/
+        div.name{
+            color: green;
+        }
+        h1 + h2{
+            color: blue;
+        }
+        h1 ~ h2{
+            background-color: red;
+        }
+        a:link{
+            color:black;
+        }
+        a:visited{
+            color:blue;
+        }
+        a:hover{
+            color:green;
+        }
+        input[type='text']:focus{
+            background-color: red;
+        }
+        #family > li:first-child{
+            color : yellow;
+        }
+        #family > li:last-child{
+            color : orange;
+        }
+        #family > li:nth-child(2){
+            color : green;
+        }
+    </style>
+</head>
+<body>
+    <ul id="family">
+        <li>첫째</li>
+        <li>둘째</li>
+        <li>셋째</li>
+        <li>넷째</li>
+        <li>다섯째</li>
+    </ul>
+    <a href="https://www.naver.com">네이버</a>
+    <h1>제목1</h1>
+    <h1>제목2</h1>
+    <h1>제목2</h1>
+    <h1>제목2</h1>
+    <div id="parent">
+        <div>첫째</div>
+        <div>둘째
+            <a>첫째</a>
+            <a>둘째</a>
+        </div>
+        <span>셋째
+            <div>첫째</div>
+            <div>둘째</div>
+        </span>
+
+    <h1 id="greet">안녕하세요</h1>
+    <p id = "name">저는 홍길동입니다.</p>
+    <p class = "name">저는 홍길동입니다.</p>
+    <p class="name">저는 홍길동입니다.</p>
+    <p class="name">저는 홍길동입니다.</p>
+    <input type = "text">
+</body>
+</html>

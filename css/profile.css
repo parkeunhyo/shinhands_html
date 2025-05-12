@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('../fonts/NANUMSQUARENEO-ALT.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'NanumNeoRegular';
+    src: url('../fonts/NANUMSQUARENEO-BRG.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'NanumNeoBold';
+    src: url('../fonts/NANUMSQUARENEO-CBD.TTF') format('truetype');
+}
+
+/* 폰트 적용 예시 */
+body {
+    font-family: 'NanumNeoBold', sans-serif;
+}
+h1{
+    font-size:36px;
+}
