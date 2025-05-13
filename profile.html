@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/profile.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뷰포트 예시</title>
+  <style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 50px;
+        background-color: lightgreen;
+    }
+
+    /* 작은 화면용 스타일 */
+    @media (max-width: 768px) {
+        body {
+            background-color: lightblue;
+        }
+    }
+
+    /* 아주 작은 화면용 스타일 */
+    @media (max-width: 480px) {
+        body {
+            background-color: lightcoral;
+        }
+    }
+
+  </style>
 </head>
 <body>
-    <h1>Profile</h1>
+  <h1>반응형 웹페이지입니다</h1>
+  <p>브라우저 크기를 줄여보세요!</p>
 </body>
 </html>
