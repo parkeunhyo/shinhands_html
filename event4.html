@@ -1,0 +1,14 @@
+<!-- 버튼 클릭시 value 값 alert 띄우기 -->
+<input type="button" value="버튼1">
+<input type="button" value="버튼2">
+<input type="button" value="버튼3">
+
+<script>
+    let buttons = document.querySelectorAll("input[type='button']");
+    console.log(buttons);
+    buttons.forEach((e, i) => {
+        e.onclick = function (event) {
+            console.log(this.value);
+        };
+    });
+</script>

@@ -1,0 +1,51 @@
+<script>
+    // 템플릿 문자열
+ 
+    
+
+    // 전개 연산
+    let arr = [1,2,3];
+    let arr2 = arr;
+    console.log(arr==arr2);
+    let arr3 = [...arr];
+    console.log(arr==arr3);
+    console.log(arr);
+    console.log(arr2);
+    console.log(arr3);
+    let arr4 = [...arr3, 4, 5, ...arr,...arr2,...arr3];
+    console.log(arr4);
+
+    let obj1 = {a:1, b:2};
+    let obj2 = {c:3, d:4};
+    let obj3 = {...obj1, ...obj2};
+    console.log(obj3);
+
+    let obj4 = {...obj3, c:10};
+    console.log(obj4);
+
+    //객체 확장 표현식
+    let propertyName = 'name';
+    obj4[propertyName] = '홍길동';
+    console.log(obj4);
+    let member = {
+        no : 1,
+        propertyName : '홍길동'
+    };
+
+    //화살표 함수
+
+    // 구조분해 할당
+    let ar = [1,2];
+    let a = a[0];
+    let b = a[1];
+    let [a1, b2] = ar; // 순서대로 대입
+    console.log(a1, b2);
+    
+    // 객체 구조 분해 할당
+    let ob = {a3:1, b3:2};
+    let {b3, a3} = ob; // 동일한 속성명으로 대입(순서 상관x)
+
+    // 클래스
+
+
+</script>

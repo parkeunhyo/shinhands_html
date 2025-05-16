@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'nanumesquareneo';
+            src: url('../fonts/NANUMSQUARENEO-ALT.TTF') format('truetype');
+
+        }
+
+        body {
+            font-family: 'nanumesquareneo';
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: rgb(236, 239, 255);
+            width: 30%;
+            padding:30px;
+            
+
+        }
+       button{
+        font-family: 'nanumesquareneo';
+        
+       }
+    </style>
+    <script>
+        window.onload = function () {
+
+            const button = document.querySelector("button");
+            const input = document.querySelector("input[type='text']");
+
+            button.addEventListener("click", function (e) {
+                event.preventDefault();
+                newRegister();
+            });
+            const itemList = document.querySelector("#itemList");
+            itemList.addEventListener("click", (event) => {
+                if (event.target.tagName === "LI") {
+                    if (confirm("삭제하시겠습니까?")) {
+                        event.target.remove();
+                    }
+                }
+            });
+
+
+            function newRegister() {
+                let value = input.value.trim();
+                if (value === "") {
+                    alert("항목을 입력하세요.");
+                    return;
+                }
+                // li 객체 생성
+                let newItem = document.createElement("li");
+                // li 객체 안에 들어갈 텍스트 노드 생성
+                let textNode = document.createTextNode(value);
+                // 텍스트 노드를 li에 붙이기
+                newItem.appendChild(textNode);
+                // li를 ul에 자식으로 붙이기
+                document.querySelector("#itemList").appendChild(newItem);
+                input.value = "";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Web Programming</h1>
+        <h3>공부할 주제를 기록해 보세요</h3>
+        <input type="text">
+        <button>추가</button>
+        <ul id="itemList">x
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+</body>
+
+</html>

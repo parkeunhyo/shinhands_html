@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>성적 계산기</title>
+    <link rel="stylesheet" href="/css/calculate.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>성적 계산기</h1>
+        <div class="subject-container">
+            <p>국어</p>
+            <input type="number" id="korean">
+        </div>
+
+        <div class="subject-container">
+            <p>영어</p> <input type="number" id="english">
+        </div>
+        <div class="subject-container">
+            <p>수학</p> <input type="number" id="math">
+        </div>
+        <div class="button-container">
+            <button onclick="calculate()">계산</button>
+            <button class="reset-btn" onclick="reset()">reset</button>
+        </div>
+        <div class="result">
+            <p>총점 : <span id="total"></span></p>
+            <p>평균 : <span id="average"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const korean = parseFloat(document.getElementById("korean").value);
+            const english = parseFloat(document.getElementById("english").value);
+            const math = parseFloat(document.getElementById("math").value);
+
+            const total = korean + english + math;
+            const average = (total / 3).toFixed(2);
+
+            document.getElementById("total").innerText = total;
+            document.getElementById("average").innerText = average;
+        }
+        function reset() {
+            // subject-container 안의 모든 input 초기화
+            const subjectInputs = document.querySelectorAll('.subject-container input');
+            subjectInputs.forEach(input => input.value = "");
+
+            // result 안의 모든 span 초기화
+            const resultSpans = document.querySelectorAll('.result span');
+            resultSpans.forEach(span => span.innerText = "");
+        }
+
+
+    </script>
+</body>
+
+</html>
